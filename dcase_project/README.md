@@ -160,8 +160,8 @@ $ python main.py --exp dcb
 Experiment settings described in the `exp_settings/dcb.yaml` file are:
 
     adapt:
-      audio_emb_size: 128
-      nb_layers: 1
+     audio_emb_size: 128
+     nb_layers: 1
     data:
       root_dir: data
       features_dir: clotho_v2_vggish
@@ -178,11 +178,11 @@ Experiment settings described in the `exp_settings/dcb.yaml` file are:
         d_model: 768
         decoder_attention_heads: 12
         decoder_ffn_dim: 3072
-        decoder_layers: 6
+        decoder_layers: 7
         dropout: 0.1
         encoder_attention_heads: 12
         encoder_ffn_dim: 3072
-        encoder_layers: 6
+        encoder_layers: 7
         vocab_size: 50265
       generation: # Generation parameters
         early_stopping: true
@@ -192,8 +192,8 @@ Experiment settings described in the `exp_settings/dcb.yaml` file are:
         max_length: 100
         length_penalty: 1.0
         decoding: beam
-      eval_model: best
-      eval_checkpoint: null
+      eval_model: false
+      eval_checkpoint: 0
       freeze:
         all: false
         attn: false
@@ -207,6 +207,8 @@ Experiment settings described in the `exp_settings/dcb.yaml` file are:
         mlp: false
       tokenizer: facebook/bart-base
       pretrained: null
+    load:
+      checkpoint: ./outputs/dcb_out/pytorch_model_best.bin
     training:
       eval_steps: 1000
       force_cpu: false
@@ -214,14 +216,15 @@ Experiment settings described in the `exp_settings/dcb.yaml` file are:
       gradient_accumulation_steps: 2
       num_workers: 8
       lr: 1.0e-05
-      nb_epochs: 20
+      nb_epochs: 1
       save_steps: 1000
       seed: 0
     workflow:
       train: true
-      validate: true
+      validate: false
       evaluate: true
       infer: false
+
 
 ### Adaptation settings
 
