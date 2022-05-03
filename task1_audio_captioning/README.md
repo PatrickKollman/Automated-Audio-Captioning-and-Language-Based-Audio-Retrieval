@@ -26,8 +26,6 @@ For more information on the subtask, please refer to the corresponding [DCASE su
 
 The first step in running the baseline system is to clone this repository on your computer.
 
-This operation will create a `dcase-project` directory at the current location, with the contents of this repository. The `dcase-project` will be referred to as the root directory in the rest of this readme.
-
 Next, a recent version of PyTorch is required to run the system.
 
 A transformers library will need to be installed as well
