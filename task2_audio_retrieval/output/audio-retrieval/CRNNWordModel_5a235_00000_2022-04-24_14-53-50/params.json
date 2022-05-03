@@ -1,0 +1,98 @@
+{
+  "AdamOptimizer": {
+    "args": {
+      "lr": 0.001,
+      "weight_decay": 0.0
+    },
+    "name": "Adam",
+    "scheduler_args": {
+      "factor": 0.1,
+      "mode": "min",
+      "patience": 5,
+      "threshold": 0.01,
+      "threshold_mode": "abs"
+    }
+  },
+  "CRNNWordModel": {
+    "args": {
+      "audio_encoder": {
+        "in_dim": 64,
+        "out_dim": 300,
+        "up_sampling": true
+      },
+      "text_encoder": {
+        "word_embedding": {
+          "embed_dim": 300,
+          "pretrained": true,
+          "trainable": false
+        }
+      }
+    },
+    "name": "CRNNWordModel"
+  },
+  "TripletRankingLoss": {
+    "args": {
+      "margin": 1.0
+    },
+    "name": "TripletRankingLoss"
+  },
+  "eval_data": {
+    "audio_features": "audio_logmel.hdf5",
+    "data_splits": {
+      "test": "evaluation_captions.json",
+      "train": "development_captions.json",
+      "val": "validation_captions.json"
+    },
+    "dataset": "Clotho.v2.1",
+    "input_path": "Clotho.v2.1/validation",
+    "text_tokens": "tokens",
+    "vocabulary": "vocab_info.pkl",
+    "word_embeddings": "word2vec_emb.pkl"
+  },
+  "experiment": "audio-retrieval",
+  "output_path": "output",
+  "ray_conf": {
+    "init_args": {
+      "_temp_dir": "/tmp/ray",
+      "ignore_reinit_error": true,
+      "local_mode": false,
+      "num_cpus": 1,
+      "num_gpus": 1
+    },
+    "reporter": "CLIReporter",
+    "search_alg": null,
+    "search_space": {},
+    "stopper_args": {
+      "grace_period": 60,
+      "metric": "val_loss",
+      "metric_threshold": null,
+      "mode": "min",
+      "num_results": 10,
+      "std": 0.01
+    },
+    "trial_scheduler": null,
+    "trial_stopper": "TrialPlateauStopper"
+  },
+  "train_data": {
+    "audio_features": "audio_logmel.hdf5",
+    "data_splits": {
+      "test": "evaluation_captions.json",
+      "train": "development_captions.json",
+      "val": "validation_captions.json"
+    },
+    "dataset": "Clotho.v2.1",
+    "input_path": "Clotho.v2.1/development",
+    "text_tokens": "tokens",
+    "vocabulary": "vocab_info.pkl",
+    "word_embeddings": "word2vec_emb.pkl"
+  },
+  "training": {
+    "algorithm": {
+      "batch_size": 32,
+      "criterion": "TripletRankingLoss",
+      "epochs": 150,
+      "optimizer": "AdamOptimizer"
+    },
+    "model": "CRNNWordModel"
+  }
+}

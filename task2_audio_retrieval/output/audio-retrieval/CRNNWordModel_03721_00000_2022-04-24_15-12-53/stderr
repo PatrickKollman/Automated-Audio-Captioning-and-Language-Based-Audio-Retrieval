@@ -1,0 +1,113 @@
+:actor_name:train
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 262, in run
+    self._entrypoint()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 331, in entrypoint
+    self._status_reporter.get_checkpoint())
+  File "/usr/local/lib/python3.7/dist-packages/ray/util/tracing/tracing_helper.py", line 451, in _resume_span
+    return method(self, *_args, **_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 600, in _trainable_func
+    output = fn()
+  File "<ipython-input-4-2f96a53ea0fd>", line 4, in train
+  File "/content/gdrive/MyDrive/dcase2022-audio-retrieval/utils/data_utils.py", line 104, in load_data
+    audio_feats = h5py.File(feats_path, "r")
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to open file (unable to open file: name = './Clotho.v2.1/audio_logmel.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/logging/__init__.py", line 1025, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.7/logging/__init__.py", line 869, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.7/logging/__init__.py", line 608, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.7/logging/__init__.py", line 369, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.7/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 268, in run
+    logger.exception("Runner Thread raised error. ", str(os.getcwd()))
+Message: 'Runner Thread raised error. '
+Arguments: ('/content/gdrive/MyDrive/dcase2022-audio-retrieval/output/audio-retrieval/CRNNWordModel_03721_00000_2022-04-24_15-12-53',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 262, in run
+    self._entrypoint()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 331, in entrypoint
+    self._status_reporter.get_checkpoint())
+  File "/usr/local/lib/python3.7/dist-packages/ray/util/tracing/tracing_helper.py", line 451, in _resume_span
+    return method(self, *_args, **_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 600, in _trainable_func
+    output = fn()
+  File "<ipython-input-4-2f96a53ea0fd>", line 4, in train
+  File "/content/gdrive/MyDrive/dcase2022-audio-retrieval/utils/data_utils.py", line 104, in load_data
+    audio_feats = h5py.File(feats_path, "r")
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to open file (unable to open file: name = './Clotho.v2.1/audio_logmel.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/logging/__init__.py", line 1025, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.7/logging/__init__.py", line 869, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.7/logging/__init__.py", line 608, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.7/logging/__init__.py", line 369, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.7/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 268, in run
+    logger.exception("Runner Thread raised error. ", str(os.getcwd()))
+Message: 'Runner Thread raised error. '
+Arguments: ('/content/gdrive/MyDrive/dcase2022-audio-retrieval/output/audio-retrieval/CRNNWordModel_03721_00000_2022-04-24_15-12-53',)
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 281, in run
+    raise e
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 262, in run
+    self._entrypoint()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 331, in entrypoint
+    self._status_reporter.get_checkpoint())
+  File "/usr/local/lib/python3.7/dist-packages/ray/util/tracing/tracing_helper.py", line 451, in _resume_span
+    return method(self, *_args, **_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 600, in _trainable_func
+    output = fn()
+  File "<ipython-input-4-2f96a53ea0fd>", line 4, in train
+  File "/content/gdrive/MyDrive/dcase2022-audio-retrieval/utils/data_utils.py", line 104, in load_data
+    audio_feats = h5py.File(feats_path, "r")
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to open file (unable to open file: name = './Clotho.v2.1/audio_logmel.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+

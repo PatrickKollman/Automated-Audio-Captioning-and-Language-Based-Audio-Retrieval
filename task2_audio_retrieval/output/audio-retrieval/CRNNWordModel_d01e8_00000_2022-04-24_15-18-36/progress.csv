@@ -1,0 +1,2 @@
+train_loss,val_loss,test_loss,time_this_iter_s,should_checkpoint,done,timesteps_total,episodes_total,training_iteration,trial_id,experiment_id,date,timestamp,time_total_s,pid,hostname,node_ip,time_since_restore,timesteps_since_restore,iterations_since_restore
+2.0062669269243876,2.006083804659727,2.0048455079881156,5753.1570608615875,True,False,,,1,d01e8_00000,8319f5d34a9a472bb11755e85f7f5514,2022-04-24_16-54-33,1650819273,5753.1570608615875,3180,cb72e362b4b2,172.28.0.2,5753.1570608615875,0,1

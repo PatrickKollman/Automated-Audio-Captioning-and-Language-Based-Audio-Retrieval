@@ -1,0 +1,7 @@
+:actor_name:train
+:actor_name:train
+[INFO 2022-04-24 19:33:22,988] trainable.py: 496  Restored on 172.28.0.2 from checkpoint: /content/gdrive/MyDrive/dcase2022-audio-retrieval/output/audio-retrieval/CRNNWordModel_d01e8_00000_2022-04-24_15-18-36/checkpoint_tmp0400b6/./
+[INFO 2022-04-24 19:33:22,990] trainable.py: 503  Current state after restoring: {'_iteration': 1, '_timesteps_total': None, '_time_total': 5753.1570608615875, '_episodes_total': None}
+:actor_name:train
+[INFO 2022-04-24 19:41:49,262] trainable.py: 496  Restored on 172.28.0.2 from checkpoint: /content/gdrive/MyDrive/dcase2022-audio-retrieval/output/audio-retrieval/CRNNWordModel_d01e8_00000_2022-04-24_15-18-36/checkpoint_tmp0b8e9e/./
+[INFO 2022-04-24 19:41:49,263] trainable.py: 503  Current state after restoring: {'_iteration': 1, '_timesteps_total': None, '_time_total': 5753.1570608615875, '_episodes_total': None}

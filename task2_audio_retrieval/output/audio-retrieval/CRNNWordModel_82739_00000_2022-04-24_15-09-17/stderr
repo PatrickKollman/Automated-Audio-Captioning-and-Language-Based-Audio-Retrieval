@@ -1,0 +1,69 @@
+:actor_name:train
+[ERROR 2022-04-24 15:09:18,689] function_runner.py: 268  Runner Thread raised error. Yes it did!
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 262, in run
+    self._entrypoint()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 332, in entrypoint
+    self._status_reporter.get_checkpoint())
+  File "/usr/local/lib/python3.7/dist-packages/ray/util/tracing/tracing_helper.py", line 451, in _resume_span
+    return method(self, *_args, **_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 601, in _trainable_func
+    output = fn()
+  File "<ipython-input-4-2f96a53ea0fd>", line 4, in train
+  File "/content/gdrive/MyDrive/dcase2022-audio-retrieval/utils/data_utils.py", line 104, in load_data
+    audio_feats = h5py.File(feats_path, "r")
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to open file (unable to open file: name = './Clotho.v2.1/audio_logmel.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[ERROR 2022-04-24 15:09:18,694] function_runner.py: 269  Hello People
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 262, in run
+    self._entrypoint()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 332, in entrypoint
+    self._status_reporter.get_checkpoint())
+  File "/usr/local/lib/python3.7/dist-packages/ray/util/tracing/tracing_helper.py", line 451, in _resume_span
+    return method(self, *_args, **_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 601, in _trainable_func
+    output = fn()
+  File "<ipython-input-4-2f96a53ea0fd>", line 4, in train
+  File "/content/gdrive/MyDrive/dcase2022-audio-retrieval/utils/data_utils.py", line 104, in load_data
+    audio_feats = h5py.File(feats_path, "r")
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to open file (unable to open file: name = './Clotho.v2.1/audio_logmel.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 282, in run
+    raise e
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 262, in run
+    self._entrypoint()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 332, in entrypoint
+    self._status_reporter.get_checkpoint())
+  File "/usr/local/lib/python3.7/dist-packages/ray/util/tracing/tracing_helper.py", line 451, in _resume_span
+    return method(self, *_args, **_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 601, in _trainable_func
+    output = fn()
+  File "<ipython-input-4-2f96a53ea0fd>", line 4, in train
+  File "/content/gdrive/MyDrive/dcase2022-audio-retrieval/utils/data_utils.py", line 104, in load_data
+    audio_feats = h5py.File(feats_path, "r")
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to open file (unable to open file: name = './Clotho.v2.1/audio_logmel.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+

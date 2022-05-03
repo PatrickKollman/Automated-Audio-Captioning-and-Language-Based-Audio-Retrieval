@@ -1,0 +1,37 @@
+Failure # 1 (occurred at 2022-04-24_14-59-33)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/trial_runner.py", line 886, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/ray_trial_executor.py", line 675, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/usr/local/lib/python3.7/dist-packages/ray/_private/client_mode_hook.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/worker.py", line 1763, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TuneError): [36mray::ImplicitFunc.train()[39m (pid=1333, ip=172.28.0.2, repr=train)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/trainable.py", line 319, in train
+    result = self.step()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 381, in step
+    self._report_thread_runner_error(block=True)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 532, in _report_thread_runner_error
+    ("Trial raised an exception. Traceback:\n{}".format(err_tb_str)
+ray.tune.error.TuneError: Trial raised an exception. Traceback:
+[36mray::ImplicitFunc.train()[39m (pid=1333, ip=172.28.0.2, repr=train)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 262, in run
+    self._entrypoint()
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 331, in entrypoint
+    self._status_reporter.get_checkpoint())
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/function_runner.py", line 600, in _trainable_func
+    output = fn()
+  File "<ipython-input-11-2f96a53ea0fd>", line 4, in train
+  File "/content/gdrive/MyDrive/dcase2022-audio-retrieval/utils/data_utils.py", line 104, in load_data
+    audio_feats = h5py.File(feats_path, "r")
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to open file (unable to open file: name = './Clotho.v2.1/audio_logmel.hdf5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+

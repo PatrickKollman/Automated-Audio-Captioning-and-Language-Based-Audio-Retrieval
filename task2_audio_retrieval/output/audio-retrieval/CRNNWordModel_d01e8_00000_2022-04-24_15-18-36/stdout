@@ -1,0 +1,39 @@
+:actor_name:train
+Load /content/gdrive/MyDrive/dcase2022-audio-retrieval/Clotho.v2.1/audio_logmel.hdf5
+Load /content/gdrive/MyDrive/dcase2022-audio-retrieval/Clotho.v2.1/word2vec_emb.pkl
+Load /content/gdrive/MyDrive/dcase2022-audio-retrieval/Clotho.v2.1/development_captions.json
+Load /content/gdrive/MyDrive/dcase2022-audio-retrieval/Clotho.v2.1/validation_captions.json
+Load /content/gdrive/MyDrive/dcase2022-audio-retrieval/Clotho.v2.1/evaluation_captions.json
+CRNNWordModel(
+  (audio_encoder): CRNNEncoder(
+    (cnn): CNNModule(
+      (features): Sequential(
+        (0): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+        (3): LPPool2d(norm_type=4, kernel_size=(2, 4), stride=None, ceil_mode=False)
+        (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Conv2d(32, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (6): LeakyReLU(negative_slope=0.1, inplace=True)
+        (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (8): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (9): LeakyReLU(negative_slope=0.1, inplace=True)
+        (10): LPPool2d(norm_type=4, kernel_size=(2, 4), stride=None, ceil_mode=False)
+        (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (12): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (13): LeakyReLU(negative_slope=0.1, inplace=True)
+        (14): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (15): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (16): LeakyReLU(negative_slope=0.1, inplace=True)
+        (17): LPPool2d(norm_type=4, kernel_size=(1, 4), stride=None, ceil_mode=False)
+        (18): Dropout(p=0.3, inplace=False)
+      )
+    )
+    (gru): GRU(128, 150, batch_first=True, bidirectional=True)
+  )
+  (text_encoder): WordEncoder(
+    (word_embedding): WordEmbedding(
+      (embedding): Embedding(4364, 300)
+    )
+  )
+)
