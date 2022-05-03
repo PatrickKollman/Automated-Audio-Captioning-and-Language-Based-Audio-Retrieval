@@ -1,12 +1,11 @@
-# Introduction to Deep Learning Final Repo:  
-# DCASE 2022 task 6, subtask A: Automated Audio Captioning
-For more information, please refer to the corresponding [DCASE subtask page](https://dcase.community/challenge2022/task-automatic-audio-captioning).
+# Introduction to Deep Learning Final Project: Automated Audio Captioning
+For more information on the subtask, please refer to the corresponding [DCASE subtask page](https://dcase.community/challenge2022/task-automatic-audio-captioning).
 
 ----
 
 ## Table of contents
 
- 1. [Repository setup](#repo-setup)
+ 1. [Repository setup](#repository-setup)
  2. [Clotho dataset](#clotho-dataset)
     1. [Obtaining the data from Zenodo](#obtaining-the-data-from-zenodo)
     2. [Data pre-processing](#data-pre---processing)
@@ -30,6 +29,11 @@ The first step in running the baseline system is to clone this repository on you
 This operation will create a `dcase-project` directory at the current location, with the contents of this repository. The `dcase-project` will be referred to as the root directory in the rest of this readme.
 
 Next, a recent version of PyTorch is required to run the system.
+
+A transformers library will need to be installed as well
+````shell script
+$ pip install transformers
+````
 
 Lastly, the [caption-evaluation-tools](https://github.com/audio-captioning/caption-evaluation-tools) is needed for evaluation.
 
@@ -123,7 +127,7 @@ The settings are the following:
 
 ----
 
-## Running the baseline system
+## Running the system
 
 ### Running an experiment
 
@@ -141,7 +145,7 @@ After training, model weights are saved to a `outputs/<exp_name>_out/` directory
 ### Evaluation with pre-trained weights
 
  1. Download pre-trained weights from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6352699.svg)](https://doi.org/10.5281/zenodo.6352699)
- 2. In `exp_settings/dcb.yaml`, change the `lm/eval_model` setting to `/path/to/dcase_baseline_pre_trained.bin`, with the correct path to the downloaded file.
+ 2. In `exp_settings/dcb.yaml`, change the `load/checkpoint` setting to `/path/to/dcase_baseline_pre_trained.bin`, with the correct path to the downloaded file.
  3. Set the `workflow/train` and `workflow/validate` to `false`, and `workflow/evaluate` and/or `workflow/infer` to `true`.
  4. Run the evaluation and/or inference.
 
