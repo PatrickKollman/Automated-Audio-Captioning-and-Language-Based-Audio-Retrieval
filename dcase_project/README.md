@@ -1,21 +1,17 @@
-# Baseline system for DCASE 2022 task 6, subtask A
-
-This repository contains the baseline system for the DCASE 2022 challenge task 6A on audio captioning.
-
-The main model is composed of a transformer encoder-decoder, that autoregressively models captions conditionally to VGGish embeddings.
-
+# Introduction to Deep Learning Final Repo:  
+# DCASE 2022 task 6, subtask A: Automated Audio Captioning
 For more information, please refer to the corresponding [DCASE subtask page](https://dcase.community/challenge2022/task-automatic-audio-captioning).
 
 ----
 
 ## Table of contents
 
- 1. [Repository setup](#repository-setup)
+ 1. [Repository setup](#repo-setup)
  2. [Clotho dataset](#clotho-dataset)
     1. [Obtaining the data from Zenodo](#obtaining-the-data-from-zenodo)
     2. [Data pre-processing](#data-pre---processing)
     3. [Pre-processing parameters](#pre---processing-parameters)
- 3. [Running the baseline system](#running-the-baseline-system)
+ 3. [Running the system](#running-the-baseline-system)
     1. [Running an experiment](#running-an-experiment)
     2. [Evaluation with pre-trained weights](#evaluation-with-pre---trained-weights)
  4. [Details of experiment settings](#details-of-experiment-settings)
@@ -29,25 +25,11 @@ For more information, please refer to the corresponding [DCASE subtask page](htt
 
 ## Repository setup
 
-The first step in running the baseline system is to clone this repository on your computer:
+The first step in running the baseline system is to clone this repository on your computer.
 
-````shell script
-$ git clone git@github.com:felixgontier/dcase-2022-baseline.git
-````
+This operation will create a `dcase-project` directory at the current location, with the contents of this repository. The `dcase-project` will be referred to as the root directory in the rest of this readme.
 
-This operation will create a `dcase-2022-baseline` directory at the current location, with the contents of this repository. The `dcase-2022-baseline` will be referred to as the root directory in the rest of this readme.
-
-Next, a recent version of PyTorch is required to run the baseline.
-
-**Note**: The baseline system is developed with Python 3.7, PyTorch 1.7.1 and CUDA 10.1.
-Please refer to the [PyTorch setup guide](https://pytorch.org/get-started/locally/) for PyTorch/CUDA compatibility information.
-
-Other required packages can be installed using Pip by running the following command in the root directory:
-
-````shell script
-$ python3.7 -m venv env/ # Optionally create a virtual environment
-$ pip install -r requirements_pip.txt
-````
+Next, a recent version of PyTorch is required to run the system.
 
 Lastly, the [caption-evaluation-tools](https://github.com/audio-captioning/caption-evaluation-tools) is needed for evaluation.
 
