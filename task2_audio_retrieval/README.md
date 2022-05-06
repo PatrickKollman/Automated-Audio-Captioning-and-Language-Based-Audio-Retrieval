@@ -47,4 +47,4 @@ There are 5 different experiments that can be run using the above method:
 
 (4) shared_space : Adds a FC layer to learn joint embeddings for the text and audio
 
-(5) 
+(5) sentence_transformer: Use sentence transformer to generate text embeddings
